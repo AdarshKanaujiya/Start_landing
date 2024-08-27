@@ -1,0 +1,156 @@
+/* Slider Container */
+*{
+    font-family:cursive;
+}
+
+.navbar{
+    background-color: black;
+    color:#fff
+}
+
+
+.slider {
+    position: relative;
+    width: 100%;
+    height: 400px; /* Adjust as needed */
+    overflow: hidden; /* Hide overflow to maintain slider boundaries */
+}
+
+.slides {
+    display: flex;
+    width: 4750px;
+    height: 100%;
+    animation: scroll 60s linear infinite;
+}
+
+.card {
+    width:250px; /* Adjust to show fewer cards at a time if needed */
+    box-sizing: border-box;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    transition: transform 0.5s ease, z-index 0.5s ease, box-shadow 0.3s ease; /* Smooth transitions */
+}
+
+/* Style for centered card */
+.card.active {
+    transform: scale(1.1); /* Slightly enlarge the active card */
+    z-index: 2; /* Ensure the active card is on top */
+    animation-play-state: paused;
+}
+
+/* Style for non-active cards */
+.card:not(.active) {
+    transform: scale(0.9); /* Slightly shrink the non-active cards */
+    z-index: 1; /* Ensure the non-active cards are behind the active card */
+}
+
+/* Hover effect for cards */
+.card:hover {
+    transform: scale(1.05); /* Slightly enlarge card on hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Add shadow on hover */
+    cursor: pointer; /* Change cursor to pointer on hover */
+    
+}
+
+.slides:hover {
+    animation-play-state: paused;
+}
+
+.card img {
+    width: 100%;
+    height: 100%; /* Maintain aspect ratio */
+    object-fit: contain;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Keyframes for horizontal scrolling effect */
+@keyframes scroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-100%); }
+}
+
+.hero{
+    background-color: orange;
+}
+
+/* Additional Styling for the Hero Section */
+.hero h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+.hero button {
+    background-color: #4CAF50;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.hero button:hover {
+    background-color: #3e8e41;
+}
+
+.feature-card {
+    background-color: #fff;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .feature-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  }
+  
+  .feature-card i {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  .feature-card h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  
+  .feature-card p {
+    font-size: 14px;
+    color: #666;
+  }
+
+.cta button {
+    background-color: #4CAF50;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.cta button:hover {
+    background-color: #3e8e41;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+}
+
+footer p {
+    font-size: 14px;
+    margin-bottom: 10px;
+}
